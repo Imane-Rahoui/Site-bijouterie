@@ -1,0 +1,131 @@
+<!--  Rahoui Imane & Ait El Mahjoub Sara 2AP-G2-EMSI_Centre -->
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8"/>
+        <title> Bijoux : La bijouterie en ligne </title>
+        <link rel="icon" type="image/png" href="../images/diamant.png" />
+        <style>
+            @import url(../css/index.css); 
+            @import url(../css/panier.css);  
+			#aci 
+            {
+            font-size: 1.2em;
+	        font-family: Courier, monospace;
+	        margin:1px 5% 2px 9%;
+	        position:relative;
+            }
+			#txt
+			{
+			text-align:center; 
+			padding:7px;
+			margin-bottom:20px;
+			line-height:23px;
+			letter-spacing:1px;
+			word-spacing:3px;
+			background-color:#F5F5F5;
+			border-style: double;
+            border-color: #BC8F8F;
+            border-radius: 2px;
+			}
+			#ph
+			{
+			position:relative;
+			left:190px;
+			border-radius:5px;
+			}
+			footer
+			{		
+			display:none;
+			}
+			#titre
+			{
+			font-size: 1.5em;
+			text-align:center;
+			color:#BC8F8F;
+			}
+			#cont
+			{
+			position:absolute;
+			right:193px;
+			left:230px;
+			}
+			
+        </style>
+        <script src="../script/data.js"></script>	
+        <script src="../script/un_article.js"></script>		
+		<script>
+	    function  searchDansCata()
+	    {   
+			var flag=0;			
+            var l=document.getElementById("loop");
+		    for(var j=0;j<catalogue.length;j++)
+	        {   var nom = document.getElementById("search").value;
+	    	    if( nom.localeCompare(catalogue[j].nom)==0)
+		        {	flag++;
+	         	    localStorage.setItem("x",nom);
+		        }
+	        }
+			if(flag==0)
+			{   
+				localStorage.setItem("x",0);
+			}
+            document.location.href="../html/un_article.html"; 
+	    }
+    </script>
+    </head>
+    <body>
+        <header>
+			<a name="top"></a>
+            <img id="logo" src="../images/logoo.png" alt="Le logo" /></p></img>
+        </header>
+        <nav id="menu">
+            <ul>
+                <li  id="aci"><a href="../index.html">Home </a></li>
+				<li  id="aci"><a href="../html/articles.html">Articles </a>
+				    <ul class="sousmenu">
+				        <li> <a href="bagues.html">Bagues   </a> </li>
+			    	    <li> <a href="boucles.html">Boucles   </a> </li>
+				        <li> <a href="montres.html">Montres   </a> </li>	
+				        <li> <a href="colliers.html">Colliers   </a> </li>	
+			    	</ul>
+				</li>
+			    <img id="imc" src="../images/personne.png"  width="30px" height="30px">					
+			    <li  id="connexion"> <a href="../html/compte.html">connexion </a></li> 
+                <img id="imp" src="../images/bag.png"  width="30px" height="30px">	
+                <li  id="ppanier"> <a href="../html/panier.html">Panier </a></li> 
+                <li  id="aci"><a href="../html/contact.html">Contact </a></li> 
+                <li  id="aci"><a href="../html/inscription.html">Inscription </a></li>  
+            </ul>
+        </nav>
+        <hr>
+		<p id="titre"><em>MENTIONS LÉGALES</em></p>
+		<img id="ph"src="../images/bijx.jpg"  width="900" height="350" />
+		<div id="cont">
+        <p id="txt">
+<b>Notre magasin :</b><br>
+16, avenue NANANI 20222 CASABLANCA<br>
+<b>Pour nous contacter :</b><br>
+05 00 00 00 00<br>
+<b>Inscription au registre du commerce et des sociétés :</b><br>
+casablanca B 398 724 583<br>
+<b>SIREN :</b> 398 724 583<br>
+<b>SIRET :</b> 514 711 274 00019<br>
+<b>Politique d'utilisation des cookies :</b><br>
+Afin de vous offrir la meilleure expérience possible, nous devons être en mesure de connaître et de mémoriser certains des paramètres qui nous sont communiqués par votre ordinateur.
+ Les cookies sont des données stockées sur votre navigateur, permettant une mémorisation temporaire de votre visite. <br>
+<b>Protection des données personnelles :</b><br>
+Conformément à la loi <font color="#008080">« informatique et libertés »</font>, vous pouvez exercer votre droit d'accès aux données vous concernant et les faire rectifier.
+		</p>
+		</div>
+        <aside id="recherche">
+            <form>
+                <input type="search" id="search" size="30" placeholder="Rechercher"  />
+                <button type="button" class="loop"id="loop" onclick="searchDansCata()"></button>
+			</form>
+        </aside>
+        <footer>
+            <p> Ait El Mahjoub Sara & Rahoui Imane, 2AP , G2 , EMSI CENTRE , 2020 COPYRIGHT © </p>
+        </footer>
+    </body>
+</html>

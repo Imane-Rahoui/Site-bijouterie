@@ -1,0 +1,160 @@
+<!--  Rahoui Imane & Ait El Mahjoub Sara 2AP-G2-EMSI_Centre -->
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8"/>
+        <title> Bijoux : La bijouterie en ligne </title>
+        <link rel="icon" type="image/png" href="../images/diamant.png" />
+        <style>
+            @import url(../css/index.css); 
+			*
+			{
+            list-style-type: none;
+            }
+            #inscription input    
+            {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+  			box-sizing: border-box;
+            }
+            input[type=submit] ,input[type=reset] {
+            width: 100%;
+            background-color: #A9A9A9;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+            input[type=submit]:hover {
+            background-color: #8FBC8F;
+            }
+            input[type=reset]:hover {
+            background-color: #BC8F8F;
+            }
+            section 
+			{
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            }
+            li
+            {
+            position:relative;
+			right :2%;
+            }
+			#aci 
+            {
+            font-size: 1.2em;
+	        margin:1px 5% 2px 9%;
+	        position:relative;
+            }
+		</style>
+        <script src="../script/data.js"></script>
+        <script src="../script/un_article.js"></script>
+		<script>
+	    function  searchDansCata()
+	    {   
+			var flag=0;			
+            var l=document.getElementById("loop");
+		    for(var j=0;j<catalogue.length;j++)
+	        {   var nom = document.getElementById("search").value;
+	    	    if( nom.localeCompare(catalogue[j].nom)==0)
+		        {	flag++;
+	         	    localStorage.setItem("x",nom);
+		        }
+	        }
+			if(flag==0)
+			{   
+				localStorage.setItem("x",0);
+			}
+            document.location.href="../html/un_article.html"; 
+	    }
+function stockageInfos()
+{
+	var myFrom = document.getElementById("inscription");
+	myFrom.onsubmit = function(){
+		var nom = document.getElementById("nom").value;
+		var prenom  = document.getElementById("prenom").value;
+		localStorage.setItem("nom",nom);
+		localStorage.setItem("prenom",prenom);
+		var tel = document.getElementById("tel").value;
+		var email = document.getElementById("email").value;
+		localStorage.setItem("tel",tel);
+		localStorage.setItem("email",email);
+		var pwd = document.getElementById("pwd").value;
+		var pwdcopy = document.getElementById("pwdcopy").value;
+		localStorage.setItem("pwd",pwd);
+		localStorage.setItem("pwdcopy",pwdcopy);
+        }
+	}
+		</script>
+    </head>
+    <body onload="stockageInfos()" onload="searchDansCata()">
+        <header>
+            <img id="logo" src="../images/logoo.png" alt="Le logo" /></p></img>
+        </header>
+        <nav id="menu">
+            <ul>
+                <li  id="aci"><a href="../index.html">Home </a></li>
+				<li  id="aci"><a href="../html/articles.html">Articles </a>
+				    <ul class="sousmenu">
+				        <li> <a href="bagues.html">Bagues   </a> </li>
+			    	    <li> <a href="boucles.html">Boucles   </a> </li>
+				        <li> <a href="montres.html">Montres   </a> </li>	
+				        <li> <a href="colliers.html">Colliers   </a> </li>	
+			    	</ul>
+				</li>
+			    <img id="imc" src="../images/personne.png"  width="30px" height="30px">					
+			    <li  id="connexion"> <a href="../html/compte.html">connexion </a></li> 
+                <img id="imp" src="../images/bag.png"  width="30px" height="30px">	
+                <li  id="ppanier"> <a href="../html/panier.html">Panier </a></li> 
+                <li  id="aci"><a href="../html/contact.html">Contact </a></li> 
+                <li  id="aci"><a href="../html/inscription.html">Inscription </a></li>  
+            </ul>
+        </nav>
+        <hr>
+       <section id ="content">
+	        <form  id="inscription" method="post" action="compte.html"> 
+                <fieldset>
+                        <legend>Cordonnées</legend>							
+	                    <input type="text" name="nom" id="nom"placeholder="Nom de famille"required />
+	                    <input type="text" name="prenom" id="prenom"placeholder="Prénom"required />	
+						<input type="tel" name="tel" id="tel" placeholder="0*********" required />
+			            <input type="email" name="email" id="email" placeholder="etiquette@domaine.com" required /> 
+	                    <input type="password" name="pwd" id="pwd"placeholder="Mot de passe"required />
+	                    <input type="password" name="pwdcopy" id="pwdcopy"placeholder="Confimer le mot de passe"required />
+	                    <input type="submit" value="Inscription" id="btnIns"/>
+						<input type="reset" value="Reinitialiser">
+			    </fieldset>
+	        </form> 
+        </section>
+        <aside id="recherche">
+            <aside id="recherche">
+            <form>
+                <input type="search" id="search" size="30" placeholder="Rechercher"  />
+                <button type="button" class="loop"id="loop" onclick="searchDansCata()"></button>
+			</form>
+            </aside>
+        </aside>
+        <nav id="pages">
+            <ul>
+                <li  id="rc">Restez en contact</li>
+				<a  href="https://www.instagram.com/" title="T.S sur Instagram">
+				<img src="../images/insta.png"  width="30px" height="30px"></a>
+				<a  href="https://twitter.com/?lang=en" title="T.S sur Twitter">
+				<img src="../images/tww.png"  width="30px" height="30px"/></a>	
+            </ul>
+        </nav> 
+        <footer>
+            <p> Ait El Mahjoub Sara & Rahoui Imane, 2AP , G2 , EMSI CENTRE , 2020COPYRIGHT © </p>
+        </footer>
+    </body>
+</html>
+
+
+

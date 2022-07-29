@@ -1,0 +1,79 @@
+  /* Rahoui Imane & Ait El Mahjoub Sara 2AP-G2-EMSI_Centre  */
+#content
+{
+	display: grid;
+    grid-template-columns: auto auto auto;
+}
+.article 
+{
+    position:relative;
+	margin:10px 40px;
+    border-bottom:1px solid #C0C0C0;
+}
+.img_art
+{
+    width : 120px;
+	height : 120px;
+	padding:20px;
+	position:relative;
+	left:100px;
+	cursor: not-allowed;
+}
+.nom_art
+{
+    text-align:center;
+	color:gray;
+	font-size: 1.2em;
+}
+.desc_art
+{
+    text-align:center;
+	font-size: 1.2em;
+}
+.nom_art:hover 
+{
+	color:#BC8F8F;
+}
+.prix_art:hover 
+{
+	font-weight:bold;
+	cursor: none;
+
+}
+.prix_art{
+	text-align:center;
+	font-size: 1.2em;
+	margin:4px;
+}
+
+.cmd_art{
+	position:relative;
+	left:144px;
+	margin-bottom:6px;
+}
+.btn_art{ 
+    background-color:green;
+    width : 25px;
+	height : 25px;
+	background-size : cover;
+	border : solid 1px white;
+	background-image : url(../images/cmd.jpg);
+	vertical-align : top;
+	display:inline;
+	cursor: pointer;
+
+}
+#aci 
+{
+    font-size: 1.2em;
+	font-family: Courier, monospace;
+	margin:1px 5% 2px 9%;
+	position:relative;
+}
+#up
+{
+	width:20px;
+	height:20px;
+	position:absolute;
+	right:2%;
+}

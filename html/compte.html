@@ -1,0 +1,141 @@
+<!--  Rahoui Imane & Ait El Mahjoub Sara 2AP-G2-EMSI_Centre -->
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8"/>
+        <title> Bijoux : La bijouterie en ligne </title>
+        <link rel="icon" type="image/png" href="../images/diamant.png" />
+        <style>
+            @import url(../css/index.css); 
+
+			#aci 
+            {
+            font-size: 1.2em;
+	        font-family: Courier, monospace;
+	        margin:1px 5% 2px 9%;
+	        position:relative;
+            }
+			#content
+			{
+			text-align:center;
+			}
+			.contHead
+			{
+			font-size: 1.3em;
+			color:#BC8F8F;
+    font-weight:bold;
+			}
+		</style>
+        <script src="../script/data.js"></script>
+        <script src="../script/un_article.js"></script>
+		<script>
+	    function  searchDansCata()
+	    {   
+			var flag=0;			
+            var l=document.getElementById("loop");
+		    for(var j=0;j<catalogue.length;j++)
+	        {   var nom = document.getElementById("search").value;
+	    	    if( nom.localeCompare(catalogue[j].nom)==0)
+		        {	flag++;
+	         	    localStorage.setItem("x",nom);
+		        }
+	        }
+			if(flag==0)
+			{   
+				localStorage.setItem("x",0);
+			}
+            document.location.href="../html/un_article.html"; 
+	    }
+function affichage()
+{
+   if(localStorage.length != 0){
+      var contact = document.getElementById("content");
+      var cont = document.createElement("div");
+      cont.className = "cont";
+      var  contHead = document.createElement("div");
+      contHead.className = "contHead";
+      contHead.innerText ="Vos informations :" 
+      cont.appendChild(contHead);
+      var  contName = document.createElement("div");
+      contName.className = "contName";
+      contName.innerText ="Nom :" + localStorage.getItem("nom");
+      cont.appendChild(contName);
+      var contPrenom = document.createElement("div");
+      contPrenom.className = "infoPrenom";
+      contPrenom.innerText ="Prenom :" + localStorage.getItem("prenom");
+      cont.appendChild(contPrenom);
+      var contEmail = document.createElement("div");
+      contEmail.className = "infoEmail";
+      contEmail.innerText = "Email :"  +localStorage.getItem("email");
+      cont.appendChild(contEmail);  
+      var contTel = document.createElement("div");
+      contTel.className = "infoTel";
+      contTel.innerText = "Tel :"  +localStorage.getItem("tel");
+      cont.appendChild(contTel);
+      var contPwd = document.createElement("div");
+      contPwd.className = "infoPwd";
+      contPwd.innerText = "Mot de passe : "  +localStorage.getItem("pwd");
+      cont.appendChild(contPwd);
+      var contPwdcopy = document.createElement("div");
+      contPwdcopy.className = "infoPwd";
+      contPwdcopy.innerText = "Confirmation de mot de passe : "  +localStorage.getItem("pwdcopy");
+      cont.appendChild(contPwdcopy);
+      contact.appendChild(cont);   
+}
+}
+		</script>
+    </head>
+    <body>
+        <header>
+            <img id="logo" src="../images/logoo.png" alt="Le logo" /></p></img>
+        </header>
+        <nav id="menu">
+            <ul>
+                <li  id="aci"><a href="../index.html">Home </a></li>
+				<li  id="aci"><a href="../html/articles.html">Articles </a>
+				    <ul class="sousmenu">
+				        <li> <a href="bagues.html">Bagues   </a> </li>
+			    	    <li> <a href="boucles.html">Boucles   </a> </li>
+				        <li> <a href="montres.html">Montres   </a> </li>	
+				        <li> <a href="colliers.html">Colliers   </a> </li>	
+			    	</ul>
+				</li>
+			    <img id="imc" src="../images/personne.png"  width="30px" height="30px">					
+			    <li  id="connexion"> <a href="../html/compte.html">connexion </a></li> 
+                <img id="imp" src="../images/bag.png"  width="30px" height="30px">	
+                <li  id="ppanier"> <a href="../html/panier.html">Panier </a></li> 
+                <li  id="aci"><a href="../html/contact.html">Contact </a></li> 
+                <li  id="aci"><a href="../html/inscription.html">Inscription </a></li>  
+            </ul>
+        </nav> 
+        <hr>
+        <section id ="content">
+<script type="text/javascript">
+affichage();
+</script>
+        </section>
+        <aside id="recherche">
+            <aside id="recherche">
+            <form>
+                <input type="search" id="search" size="30" placeholder="Rechercher"  />
+                <button type="button" class="loop"id="loop" onclick="searchDansCata()"></button>
+			</form>
+            </aside>
+        </aside>
+        <nav id="pages">
+            <ul>
+                <li  id="rc">Restez en contact</li>
+				<a  href="https://www.instagram.com/" title="T.S sur Instagram">
+				<img src="../images/insta.png"  width="30px" height="30px"></a>
+				<a  href="https://twitter.com/?lang=en" title="T.S sur Twitter">
+				<img src="../images/tww.png"  width="30px" height="30px"/></a>	
+            </ul>
+        </nav> 
+        <footer>
+            <p> Ait El Mahjoub Sara & Rahoui Imane, 2AP , G2 , EMSI CENTRE , 2020COPYRIGHT © </p>
+        </footer>
+    </body>
+</html>
+
+
+

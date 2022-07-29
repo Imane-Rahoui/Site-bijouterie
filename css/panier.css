@@ -1,0 +1,44 @@
+  /* Rahoui Imane & Ait El Mahjoub Sara 2AP-G2-EMSI_Centre  */
+#content
+{
+
+}
+#montant{
+	
+}
+td {
+border: thin solid #C0C0C0;
+text-align: center;
+padding: 5px;
+background-color: #ffffff;
+}
+.total
+{
+
+}
+.imgpoubelle
+{
+	width : 20px;
+	height : 20px;
+	cursor: pointer;
+
+}
+footer
+{
+	position:absolute;
+	bottom:5px;
+}
+#panier 
+{
+border: medium solid gray;
+border-collapse: collapse;
+width: 60%;
+margin:0 auto;
+}
+#totalht
+{
+	position:absolute;
+	right:21%;
+}
+
+

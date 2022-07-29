@@ -1,0 +1,171 @@
+<!--  Rahoui Imane & Ait El Mahjoub Sara 2AP-G2-EMSI_Centre -->
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8"/>
+        <title> Bijoux : La bijouterie en ligne </title>
+        <link rel="icon" type="image/png" href="../images/diamant.png" />
+        <style>
+            @import url(../css/index.css);
+			@import url(../css/articles.css);
+
+        </style>
+        <script src="../script/data.js"></script>
+        <script src="../script/un_article.js"></script>
+        <script>	
+	    function  searchDansCata()
+	    {   
+			var flag=0;			
+            var l=document.getElementById("loop");
+		    for(var j=0;j<catalogue.length;j++)
+	        {   var nom = document.getElementById("search").value;
+	    	    if( nom.localeCompare(catalogue[j].nom)==0)
+		        {	flag++;
+	         	    localStorage.setItem("x",nom);
+		        }
+	        }
+			if(flag==0)
+			{   
+				localStorage.setItem("x",0);
+			}
+            document.location.href="../html/un_article.html"; 
+	    }
+		var monPanier = Array();
+function chargerArticles()
+{
+	var articles=document.getElementById("content");
+    for(var i = 5; i <7; i++)
+	{   alert
+        var article= document.createElement("div" );
+		article.className = "article";
+		article.id = i + "-article";
+		var articleNom = document.createElement("h2" );
+		articleNom.className = "nom_art";
+		articleNom.innerText = catalogue[i].nom;
+		article.appendChild(articleNom);
+		var articleImg =document.createElement("img");
+		articleImg.className = "img_art";
+        articleImg.setAttribute("src", catalogue[i].image);
+		article.appendChild(articleImg);		
+        var articleDesc= document.createElement("div");
+		articleDesc.className = "desc_art";
+	    articleDesc.innerText = catalogue[i].desc;
+		article.appendChild(articleDesc);
+        var articlePrix=document.createElement("div");
+		articlePrix.className = "prix_art";
+	    articlePrix.innerText = catalogue[i].prix + " €";
+		article.appendChild(articlePrix);
+		var zoneCmd=document.createElement("div");
+		zoneCmd.className = "cmd_art";
+		var inputCmd=document.createElement("input");
+		inputCmd.className = "input_art";
+        inputCmd.id= i +"-qte";
+		inputCmd.type ="number";
+        inputCmd.value = 0;
+        inputCmd.min = 0 ;
+        inputCmd.max = 5 ;
+		zoneCmd.appendChild(inputCmd);
+        var bouton =document.createElement("button");
+		bouton.className = "btn_art";
+        bouton.id = i+"-cmd";
+		bouton.onclick = function(){
+        var item = this.getAttribute("id");
+        var pos = item.substring(0,1) ;
+		ajouterAuPanier(pos); 
+		}
+        zoneCmd.appendChild(bouton);
+        article.appendChild(zoneCmd);
+		articles.appendChild(article);
+    }
+}
+function  searchDansPanier(nom){
+	for(var j=0;j<monPanier.length;j++)
+	{		
+		if( nom.localeCompare(monPanier[j].nom)==0)
+			return 1;
+            
+	}
+	return 0;
+}
+function ajouterAuPanier(pos) 
+{   
+    if (searchDansPanier(catalogue[pos].nom))
+	    alert("Article déjà commandé");
+    else 
+	{	
+        var ident = pos +"-qte";
+        var qte =document.getElementById(ident).value;
+		alert(qte);
+		if(qte==0)
+			alert("Veuillez Choisir une quantité > 0");
+		else
+		{
+			var articleCmd = {};
+            articleCmd.nom = catalogue[pos].nom;
+			articleCmd.prix = catalogue[pos].prix;
+			articleCmd.qte = qte;
+            articleCmd.prixHt = articleCmd.prix* articleCmd.qte;
+            monPanier.push(articleCmd);
+ 			alert("Article commandé : "+articleCmd.nom+"  Quantité : "+articleCmd.qte+"  Prix unitaire : "+articleCmd.prix+" €  Prix HT : "+articleCmd.prixHt+" €.");             
+		}
+    }
+}
+function stockerPanier(data)
+{
+    var panierJSON = {};
+    panierJSON.monpanier = data;
+    localStorage.setItem("panierLocalStorage", JSON.stringify(panierJSON));
+}
+
+		</script>
+    </head>
+    <body onload ="chargerArticles()" onUnLoad="stockerPanier(monPanier)" onload="searchDansCata()" >
+        <header>
+            <img id="logo" src="../images/logoo.png" alt="Le logo" /></p></img>
+        </header>
+        <nav id="menu">
+            <ul>
+                <li  id="aci"><a href="../index.html">Home </a></li>
+				<li  id="aci"><a href="../html/articles.html">Articles </a>
+				    <ul class="sousmenu">
+				        <li> <a href="bagues.html">Bagues   </a> </li>
+			    	    <li> <a href="boucles.html">Boucles   </a> </li>
+				        <li> <a href="montres.html">Montres   </a> </li>	
+				        <li> <a href="colliers.html">Colliers   </a> </li>	
+			    	</ul>
+				</li>
+			    <img id="imc" src="../images/personne.png"  width="30px" height="30px">					
+			    <li  id="connexion"> <a href="../html/compte.html">connexion </a></li> 
+                <img id="imp" src="../images/bag.png"  width="30px" height="30px">	
+                <li  id="ppanier"> <a href="../html/panier.html">Panier </a></li> 
+                <li  id="aci"><a href="../html/contact.html">Contact </a></li> 
+                <li  id="aci"><a href="../html/inscription.html">Inscription </a></li>  
+            </ul>
+        </nav>
+		<hr>
+        <section id ="content">
+
+        </section>
+        <aside id="recherche">
+            <form>
+                <input type="search" id="search" size="30" placeholder="Rechercher"  />
+                <button type="button" class="loop"id="loop" onclick="searchDansCata()"></button>
+			</form>
+        </aside> 
+        <nav id="pages">
+            <ul>
+                <li  id="rc">Restez en contact</li>
+				<a  href="https://www.instagram.com/" title="T.S sur Instagram">
+				<img src="../images/insta.png"  width="30px" height="30px"></a>
+				<a  href="https://twitter.com/?lang=en" title="T.S sur Twitter">
+				<img src="../images/tww.png"  width="30px" height="30px"/></a>	
+            </ul>
+        </nav> 
+        <footer>
+            <p> Ait El Mahjoub Sara & Rahoui Imane, 2AP , G2 , EMSI CENTRE , 2020COPYRIGHT © </p>
+        </footer>
+    </body>
+</html>
+
+
+

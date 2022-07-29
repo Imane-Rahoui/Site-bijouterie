@@ -1,0 +1,409 @@
+  /* Rahoui Imane & Ait El Mahjoub Sara 2AP-G2-EMSI_Centre  */
+*
+{
+	font-family: Courier, monospace;
+}
+li
+{	
+    list-style-type : none;
+}
+#logo
+{
+	position:relative;
+	left:40%;
+}
+#logo:hover
+{
+	cursor: not-allowed;
+}	
+#imp
+{
+	position:absolute;
+	right:18%;
+	top:9%;
+	display:inline;
+}
+#ppanier
+{
+    position:absolute;
+	right:12%;
+	top:10%;
+	font-size: 1.2em;
+	display:inline-block;
+}
+#imc
+{
+	position:absolute;
+	right:30.5%;
+	top:9%;
+}
+#connexion
+{
+    position:absolute;
+	right:22%;
+	top:10%;
+	font-size: 1.2em;
+	display:inline-block;
+}
+a
+{
+	color: black;
+    text-decoration:none;
+}
+input[type=search]
+{   background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #C0C0C0;
+	position:absolute;
+	left:10%;
+	top:10%;
+} 
+#imr
+{
+	position:absolute;
+	left:28%;
+	top:10%;
+}
+.container     
+{
+	margin:0 auto;
+}
+#menu>ul>li
+{
+	display:inline-block;
+}
+#aci
+{
+    font-size: 1.2em;
+	font-family: Courier, monospace;
+	margin:4px 13% 2px 11%;
+	position:relative;
+}
+.sousmenu
+{          
+	display : none; 
+    background : white;
+	padding:2px;
+    border-radius : 10px ;
+	text-align:center;
+}
+
+.sousmenu li
+{
+	margin : 5px 0;			   
+}
+.sousmenu  li a
+{
+	color :black;
+} 
+#aci:hover .sousmenu  
+{
+	display : block;
+	position : absolute;
+    left : -43%;
+    width : 200%;
+   	z-index:1;
+}
+.sousmenu li:hover
+{
+	border-radius : 10px ;
+	padding:2px;
+    border-bottom:1px solid #BC8F8F;
+}
+/* #slideshow:after{ */
+	/* right:0; */
+	/* transform: rotate(4deg); */
+/* } */
+#slideshow .container {
+	position:relative;
+	width: 1000px;
+	height: 350px;
+	overflow: hidden;
+	
+}
+
+#slideshow .slider {
+	position: absolute;
+	left:0; top:0;
+	width: 1000%;
+	height: 350px;
+}
+#slideshow figure {
+	position:relative;
+	display:inline-block;
+	padding:0; margin:0;
+}
+
+
+.slider img 
+{
+  max-width: 1000px;
+  max-height:350px;
+  
+}
+
+@keyframes slider {
+	0%,10%,100%  	{ left: 0 }
+	20%, 30%		{ left: -100% }
+	30%, 37%		{ left: -202% }
+	40%, 50%		{ left: -303% }
+	55%, 65%		{ left: -404% }
+	75%, 80%        { left: -505% }
+}
+
+
+#slideshow .slider {
+	animation: slider 30s infinite;
+}
+#livraison
+{
+    transform: rotate(90deg); 
+    position:absolute;
+    right:-60px;
+    bottom:30%;
+    font-size: 1.5em;
+}
+#solde
+{
+    transform: rotate(-90deg); 
+    position:absolute;
+    left:-20px;
+    bottom:32%;
+    font-size: 1.5em;
+}
+footer
+{
+    position:relative;
+    bottom:-9px;
+    font-weight:bold;
+    margin-left:22%;
+}
+#rc
+{
+    text-align:center;
+}
+#rc ~ a
+{	
+    position:relative;
+    left:47%;
+}
+*
+{
+	font-family: Courier, monospace;
+}
+li
+{	
+    list-style-type : none;
+}
+#logo
+{
+	position:relative;
+	left:40%;
+}
+#logo:hover
+{
+	cursor: not-allowed;
+}	
+#imp
+{
+	position:absolute;
+	right:18%;
+	top:9%;
+	display:inline;
+}
+#ppanier
+{
+    position:absolute;
+	right:12%;
+	top:10%;
+	font-size: 1.2em;
+	display:inline-block;
+}
+#imc
+{
+	position:absolute;
+	right:30.5%;
+	top:9%;
+}
+#connexion
+{
+    position:absolute;
+	right:22%;
+	top:10%;
+	font-size: 1.2em;
+	display:inline-block;
+}
+a
+{
+	color: black;
+    text-decoration:none;
+}
+input[type=search]
+{   background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #C0C0C0;
+	position:absolute;
+	left:10%;
+	top:10%;
+} 
+.container     
+{
+	margin:0 auto;
+}
+#menu>ul>li
+{
+	display:inline-block;
+}
+#ligne
+{
+	text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+	border-top: 1px solid #C0C0C0;
+	display:block;
+	margin-bottom:2%;
+}
+#aci
+{
+    font-size: 1.2em;
+	font-family: Courier, monospace;
+	margin:4px 13% 2px 11%;
+	position:relative;
+}
+.sousmenu
+{          
+	display : none; 
+    background : white;
+	padding:2px;
+    border-radius : 10px ;
+	text-align:center;
+}
+
+.sousmenu li
+{
+	margin : 5px 0;			   
+}
+.sousmenu  li a
+{
+	color :black;
+} 
+#aci:hover .sousmenu  
+{
+	display : block;
+	position : absolute;
+    left : -43%;
+    width : 200%;
+   	z-index:1;
+}
+.sousmenu li:hover
+{
+	border-radius : 10px ;
+	padding:2px;
+    border-bottom:1px solid #BC8F8F;
+}
+/* #slideshow:after{ */
+	/* right:0; */
+	/* transform: rotate(4deg); */
+/* } */
+#slideshow .container {
+	position:relative;
+	width: 1000px;
+	height: 350px;
+	overflow: hidden;
+	
+}
+
+#slideshow .slider {
+	position: absolute;
+	left:0; top:0;
+	width: 1000%;
+	height: 350px;
+}
+#slideshow figure {
+	position:relative;
+	display:inline-block;
+	padding:0; margin:0;
+}
+
+
+.slider img 
+{
+  max-width: 1000px;
+  max-height:350px;
+  
+}
+
+@keyframes slider {
+	0%,20%,100%  	{ left: 0 }
+	20%, 30%		{ left: -100% }
+	30%, 37%		{ left: -202% }
+	40%, 50%		{ left: -303% }
+	55%, 65%		{ left: -404% }
+	75%, 80%        { left: -505% }
+}
+
+
+#slideshow .slider {
+	animation: slider 15s infinite;
+}
+#livraison
+{
+    transform: rotate(90deg); 
+    position:absolute;
+    right:-60px;
+    bottom:30%;
+    font-size: 1.5em;
+}
+#solde
+{
+    transform: rotate(-90deg); 
+    position:absolute;
+    left:-20px;
+    bottom:32%;
+    font-size: 1.5em;
+}
+#rc
+{
+    text-align:center;
+}
+#rc ~ a
+{	
+    position:relative;
+    left:47%;
+}
+#loop
+{
+    background-color:green;
+    width : 20px;
+	height : 20px;
+	background-size : cover;
+	border : solid 1px white;
+	background-image : url(../images/loop.png);
+	display:inline;
+}
+input[type=search]~ #loop
+{   
+    background-color: transparent;
+	position:absolute;
+	left:29%;
+	top:10%;
+	cursor:pointer;
+} 
+.slider > img:hover
+{
+	cursor:none;
+}
+#story
+{
+	position:absolute;
+	bottom:10px;
+	left:14%;
+}
+#mentlega
+{
+	position:absolute;
+	bottom:10px;
+	left:75%;
+}
